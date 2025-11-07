@@ -1,0 +1,22 @@
+#标准hosts解析
+127.0.0.1 localhost
+::1 localhost
+192.168.1.1 www.example.com
+192.168.1.2 web2.example.com
+
+#泛解析
+127.0.0.1 *.example.com
+
+# 均衡负载解析
+192.168.1.1 web1.example.com
+192.168.1.2 web1.example.com
+
+#别名解析
+@web2.example.com web1.example.com
+
+#指定dns解析
+!dns=8.8.8.8:53 web3.example.com
+!dns=https://doh.example.com/dns-query web5.example.com
+
+#dns别名解析
+@!web3.example.com web4.example.com
